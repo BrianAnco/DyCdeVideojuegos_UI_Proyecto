@@ -13,14 +13,15 @@ public class PlayerHealth : MonoBehaviour
     Blink material;
     public float fuerzaGolpeX;
     public float fuerzaGolpeY;
-    Rigidbody2D rb;
+    Rigidbody2D rbP;
     public Image vidaImagen;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
+        rbP = GameObject.Find("Player").GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
         material = GetComponent<Blink>();
         vida = vidaMaxima;
@@ -47,11 +48,11 @@ public class PlayerHealth : MonoBehaviour
 
             if(collision.transform.position.x > transform.position.x)
 			{
-                rb.AddForce(new Vector2(-fuerzaGolpeX, fuerzaGolpeY), ForceMode2D.Force);
+                rbP.AddForce(new Vector2(-fuerzaGolpeX, fuerzaGolpeY), ForceMode2D.Force);
 			}
 			else
 			{
-                rb.AddForce(new Vector2(fuerzaGolpeX, fuerzaGolpeY), ForceMode2D.Force);
+                rbP.AddForce(new Vector2(fuerzaGolpeX, fuerzaGolpeY), ForceMode2D.Force);
             }
 
             

@@ -25,8 +25,8 @@ public class EnemyHealth : MonoBehaviour
 		if (collision.CompareTag("Weapon") && !isDamaged)
 		{
 			enemy.vidaPuntos -= 2f;
-
-			if(collision.transform.position.x < transform.position.x)
+			
+			if (collision.transform.position.x < transform.position.x)
 			{
 				rb.AddForce(new Vector2(enemy.golpeFuerzaAtrasX, enemy.golpeFuerzaAtrasY), ForceMode2D.Force);
 			}
@@ -35,9 +35,8 @@ public class EnemyHealth : MonoBehaviour
 				rb.AddForce(new Vector2(-enemy.golpeFuerzaAtrasX, enemy.golpeFuerzaAtrasY), ForceMode2D.Force);
 
 			}
-
 			StartCoroutine(Damager());
-			if(enemy.vidaPuntos <= 0)
+			if (enemy.vidaPuntos <= 0)
 			{
 				Instantiate(deathEffect, transform.position, Quaternion.identity);
 				Destroy(gameObject);
