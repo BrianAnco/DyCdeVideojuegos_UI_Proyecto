@@ -7,8 +7,8 @@ public class EnemyHealth : MonoBehaviour
 	Enemy enemy;
 	public bool isDamaged;
 	public GameObject deathEffect;
-	SpriteRenderer sprite;
 	Blink material;
+	SpriteRenderer sprite;
 	Rigidbody2D rb;
 
 
