@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
     public float fuerzaGolpeX;
     public float fuerzaGolpeY;
     Rigidbody2D rb;
+    public Image vidaImagen;
 
 
     // Start is called before the first frame update
@@ -28,9 +30,11 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (vida > vidaMaxima)
+        vidaImagen.fillAmount = vida / 100;
+        if (vida > vidaMaxima)
 		{
             vida = vidaMaxima;
+
 		}
     }
 
