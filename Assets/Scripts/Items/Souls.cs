@@ -20,7 +20,7 @@ public class Souls : MonoBehaviour
 
 	private void Start()
 	{
-		soulsText.text = "x " + soulsAmount.ToString();
+		soulsText.text = "x " + soulsAmount.ToString(); 
 	}
 	public void SubItem(int subItemAmount)
 	{
